@@ -2,30 +2,31 @@ import { Router } from 'express';
 import 'dotenv/config';
 import { Client, TextContent } from '@zenvia/sdk';
 
-import SmsController from './app/controllers/SmsController';
-
 const routes = new Router();
 
-// routes.post('/', SmsController.store);
+routes.post('/sms', (req, res) => {
+  const { textMessage, phoneNumber } = req.body;
 
-routes.post('/', (request, response) => {
-  const { textMessage, phoneNumber } = request.body;
-
-  const client = new Client(process.env.API_KEY); //gitignore
+  const client = new Client(process.env.API_KEY);
 
   const sms = client.getChannel('sms');
 
   const content = new TextContent(textMessage);
 
-  sms
-    .sendMessage('ballistic-mice', phoneNumber, content)
+  phoneNumber.map(number => {
+    sms
+    .sendMessage('ballistic-mice', number, content)
     .then((response) => {
       // console.log('Response:', response);
-      resposta = response;
+      return res.json(response);
     })
     .catch((error) => {
-      console.log('Error:', error);
+      // console.log('Error:', error);
+      return res.json(error);
     });
+  });
+
+
 });
 
 export default routes;

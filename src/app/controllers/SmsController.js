@@ -1,22 +1,27 @@
+import 'dotenv/config';
 import { Client, TextContent } from '@zenvia/sdk';
 
 class SmsController {
-  async store(request, response){
+  async store(req, res){
 
-    const { textMessage, phoneNumber } = request.body;
+    const { textMessage, phoneNumber } = req.body;
 
-    const client = new Client('_ZaV3R9-BmTlTqjpKY-_KLq7IzJ2U__PfZeM');
+  const client = new Client(process.env.API_KEY);
 
-    const sms = client.getChannel('sms');
+  const sms = client.getChannel('sms');
 
-    const content = new TextContent(textMessage);
+  const content = new TextContent(textMessage);
 
-    sms.sendMessage('ballistic-mice', phoneNumber, content)
-    .then((res) => {
-      return response.json(res);
+  sms
+    .sendMessage('ballistic-mice', phoneNumber, content)
+    .then((response) => {
+      // console.log('Response:', response);
+      // resposta = response;
+      return res.json(response);
     })
     .catch((error) => {
-      console.log('Error:', error);
+      // console.log('Error:', error);
+      return res.json(error);
     });
 
   }
