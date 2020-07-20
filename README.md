@@ -78,8 +78,8 @@ Para ver a desmonstração do app clique [aqui](https://youtu.be/5-cQq7JcJkA).
 
 - Ane Mendes - <ralianemc@gmail.com>
 - Daniel - <daniel.keterer@gmail.com>
-- Kaio Almeida - <kaioalmeidacosta@gmail.com>
 - João Vitor - <j.vitor.mf@gmail.com>
+- Kaio Almeida - <kaioalmeidacosta@gmail.com>
 
 [Voltar ao topo](#-índice)
 ***
