@@ -20,7 +20,7 @@
 ## Descrição
 EContacts é uma plataforma desenvolvida pela equipe 09 durante o hackathon Zenvia Experience.
 
- A ideia do app é que o lojista utilize as suas notas fiscais das vendas geradas para encotrar o telefone de seus clientes e pode manter contato via SMS e Voz utilizando nossos serviçoes!
+ A ideia do app é que o lojista utilize as suas notas fiscais das vendas geradas para encotrar o telefone de seus clientes e pode manter contato via SMS e Voz utilizando nossos serviços!
 ***
 
 # Construído com
